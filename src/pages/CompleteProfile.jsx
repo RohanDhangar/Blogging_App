@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../store/authSlice";
 import appwriteService from "../Appwrite/Profile";
-import Button from "@girishsawant999/react-loading-button";
 
 const CompleteProfile = () => {
   const { register, handleSubmit } = useForm();
@@ -81,7 +80,7 @@ const CompleteProfile = () => {
               {...register("expert")}
             />
 
-            <Button
+            <button
               type="submit"
               className={`w-full ${
                 isLoading ? "opacity-50 pointer-events-none" : ""
@@ -95,7 +94,7 @@ const CompleteProfile = () => {
               ) : (
                 "Update your Profile"
               )}
-            </Button>
+            </button>
           </div>
         </form>
       </div>

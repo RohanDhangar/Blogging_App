@@ -4,8 +4,6 @@ import { Input, Select, RTE } from "../index";
 import appwriteService from "../../Appwrite/configuration";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Button from "@girishsawant999/react-loading-button";
-
 // once again watch the video Adding form and slug values
 
 function PostForm({ post }) {
@@ -143,7 +141,7 @@ function PostForm({ post }) {
             className="mb-4"
             {...register("Status", { required: true })}
           />
-          <Button
+          <button
               type="submit"
               className={`w-full ${
                 isLoading ? "opacity-50 pointer-events-none" : ""
@@ -157,7 +155,7 @@ function PostForm({ post }) {
               ) : (
                 `${post ? "Update" : "Submit"}`
               )}
-            </Button>
+            </button>
         </div>
       </form>
     </div>

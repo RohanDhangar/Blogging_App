@@ -5,7 +5,6 @@ import { Input, Logo } from "./index";
 import { useDispatch } from "react-redux";
 import authService from "../Appwrite/Auth";
 import { useForm } from "react-hook-form";
-import Button from "@girishsawant999/react-loading-button";
 
 function Login() {
   const navigate = useNavigate();
@@ -84,7 +83,7 @@ function Login() {
                 required: true,
               })}
             />
-            <Button
+            <button
               type="submit"
               className={`w-full ${
                 isLoading ? "opacity-50 pointer-events-none" : ""
@@ -98,7 +97,7 @@ function Login() {
               ) : (
                 "Login"
               )}
-            </Button>
+            </button>
           </div>
         </form>
       </div>

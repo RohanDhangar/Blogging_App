@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import authService from "../Appwrite/Auth";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Logo, Input } from "./index";
 import { login } from "../store/authSlice";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
-import Button from "@girishsawant999/react-loading-button";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -21,7 +20,7 @@ function SignUp() {
       const userData = await authService.createAccount(data);
       console.log(userData);
 
-      window.location.reload(); // used to perform the reload when session created 
+      window.location.reload(); // used to perform the reload when session created
       if (userData) {
         dispatch(login(userData)); // here data goes without destructuring no need of {}
       }
@@ -87,7 +86,7 @@ function SignUp() {
               })}
             />
 
-<Button
+            <button
               type="submit"
               className={`w-full ${
                 isLoading ? "opacity-50 pointer-events-none" : ""
@@ -101,7 +100,7 @@ function SignUp() {
               ) : (
                 "Create Account"
               )}
-            </Button>
+            </button>
           </div>
         </form>
       </div>
