@@ -5,7 +5,7 @@ import { Input, Logo } from "./index";
 import { useDispatch } from "react-redux";
 import authService from "../Appwrite/Auth";
 import { useForm } from "react-hook-form";
-import Button from '@girishsawant999/react-loading-button';
+import Button from "@girishsawant999/react-loading-button";
 
 function Login() {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ function Login() {
       }
     } catch (error) {
       setError(error.message);
-    }finally{
+    } finally {
       setIsLoading(false);
     }
   };
@@ -65,7 +65,7 @@ function Login() {
               label="Email: "
               placeholder="Enter your email"
               type="email"
-              // complex knwoledge 
+              // complex knwoledge
               {...register("email", {
                 required: true,
                 validate: {
@@ -79,13 +79,25 @@ function Login() {
               label="Password: "
               type="password"
               placeholder="Enter your password"
-              // complexities 
+              // complexities
               {...register("password", {
                 required: true,
               })}
             />
-            <Button type="submit" className="w-full" loading={isLoading} primary ball-triangle>
-              Sign in
+            <Button
+              type="submit"
+              className={`w-full ${
+                isLoading ? "opacity-50 pointer-events-none" : ""
+              }`}
+              loading={isLoading}
+            >
+              {isLoading ? (
+                <div className="flex items-center justify-center">
+                  <div className="w-6 h-6 border-2 border-transparent rounded-full border-t-indigo-500 animate-spin"></div>
+                </div>
+              ) : (
+                "Login"
+              )}
             </Button>
           </div>
         </form>

@@ -144,15 +144,20 @@ function PostForm({ post }) {
             {...register("Status", { required: true })}
           />
           <Button
-            type="submit"
-            bgColor={post ? "bg-green-500" : undefined}
-            className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            loading={isLoading}
-            primary 
-            ball-triangle
-          >
-            {post ? "Update" : "Submit"}
-          </Button>
+              type="submit"
+              className={`w-full ${
+                isLoading ? "opacity-50 pointer-events-none" : ""
+              }`}
+              loading={isLoading}
+            >
+              {isLoading ? (
+                <div className="flex items-center justify-center">
+                  <div className="w-6 h-6 border-2 border-transparent rounded-full border-t-indigo-500 animate-spin"></div>
+                </div>
+              ) : (
+                `${post ? "Update" : "Submit"}`
+              )}
+            </Button>
         </div>
       </form>
     </div>

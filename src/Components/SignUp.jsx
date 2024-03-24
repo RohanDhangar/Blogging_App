@@ -87,14 +87,20 @@ function SignUp() {
               })}
             />
 
-            <Button
+<Button
               type="submit"
-              className="w-full"
+              className={`w-full ${
+                isLoading ? "opacity-50 pointer-events-none" : ""
+              }`}
               loading={isLoading}
-              primary
-              ball-triangle
             >
-              Create Account
+              {isLoading ? (
+                <div className="flex items-center justify-center">
+                  <div className="w-6 h-6 border-2 border-transparent rounded-full border-t-indigo-500 animate-spin"></div>
+                </div>
+              ) : (
+                "Create Account"
+              )}
             </Button>
           </div>
         </form>
