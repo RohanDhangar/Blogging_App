@@ -25,6 +25,7 @@ const CompleteProfile = () => {
       });
 
       if (completeUserData) {
+
         dispatch(login(completeUserData));
         console.log("Updated user data dispatched:", completeUserData);
         window.location.href = "/";

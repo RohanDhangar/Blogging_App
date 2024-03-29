@@ -1,5 +1,5 @@
 import config from "../config/config";
-import { Client, Databases, ID, Storage, Query } from "appwrite";
+import { Client, Databases, ID } from "appwrite";
 
 export class Service {
   client = new Client();
@@ -19,7 +19,7 @@ export class Service {
       return await this.databases.createDocument(
         config.appwriteDatabaseId,
         config.appwriteUserCollectionId,
-        ID.unique(),
+        AccountId,
         {
           PhoneNum,
           Bio,
@@ -36,10 +36,10 @@ export class Service {
 
   async getDetails(AccountId) {
     try {
-     return await this.databases.getDocument(
+      return await this.databases.getDocument(
         config.appwriteDatabaseId,
         config.appwriteUserCollectionId,
-        AccountId,
+        AccountId
       );
     } catch (err) {
       console.log(`error in getting user details: ${err}`);

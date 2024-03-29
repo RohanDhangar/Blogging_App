@@ -142,20 +142,20 @@ function PostForm({ post }) {
             {...register("Status", { required: true })}
           />
           <button
-              type="submit"
-              className={`w-full ${
-                isLoading ? "opacity-50 pointer-events-none" : ""
-              }`}
-              loading={isLoading}
-            >
-              {isLoading ? (
-                <div className="flex items-center justify-center">
-                  <div className="w-6 h-6 border-2 border-transparent rounded-full border-t-indigo-500 animate-spin"></div>
-                </div>
-              ) : (
-                `${post ? "Update" : "Submit"}`
-              )}
-            </button>
+            type="submit"
+            className={`w-full ${
+              isLoading ? "opacity-50 pointer-events-none" : ""
+            } bg-indigo-500 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50`}
+            loading={isLoading}
+          >
+            {isLoading ? (
+              <div className="flex items-center justify-center">
+                <div className="w-6 h-6 border-2 border-transparent rounded-full border-t-2 border-b-2 border-indigo-500 animate-spin"></div>
+              </div>
+            ) : (
+              `${post ? "Update" : "Submit"}`
+            )}
+          </button>
         </div>
       </form>
     </div>

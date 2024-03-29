@@ -35,7 +35,7 @@ export default function Post() {
   return post ? (
     <div className="py-20">
       <Container>
-    <div className="w-full flex flex-col md:flex-row items-center border rounded-xl p-4 md:p-6 shadow-lg bg-gray-200">
+        <div className="w-full flex flex-col md:flex-row items-center border rounded-xl p-4 md:p-6 shadow-lg bg-gray-200">
           <div className="w-full md:w-1/2 md:mr-6 mb-4 md:mb-0 relative">
             <img
               src={appwriteService.getFilePreview(post.Image)}
@@ -51,15 +51,15 @@ export default function Post() {
             <div className="browser-css">{parse(post.content)}</div>
             {isAuthor && (
               <div className="flex justify-center mt-14">
-              <div className="space-x-4">
-                <Link to={`/edit-post/${post.$id}`}>
-                  <Button bgColor="bg-green-500">Edit</Button>
-                </Link>
-                <Button bgColor="bg-red-500" onClick={deletePost}>
-                  Delete
-                </Button>
+                <div className="space-x-4">
+                  <Link to={`/edit-post/${post.$id}`}>
+                    <Button bgColor="bg-green-500">Edit</Button>
+                  </Link>
+                  <Button bgColor="bg-red-500" onClick={deletePost}>
+                    Delete
+                  </Button>
+                </div>
               </div>
-            </div>
             )}
           </div>
         </div>

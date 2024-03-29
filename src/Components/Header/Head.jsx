@@ -53,7 +53,7 @@ function Head() {
   const handleLogout = () => {
     authService.logout().then(() => {
       dispatch(logout()); // Dispatch logout action before reload
-      window.location.href = "/login"; // Redirect to the login page after logout
+      window.location.href = "/"; // Redirect to the login page after logout
     });
   };
   
